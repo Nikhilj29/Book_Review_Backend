@@ -101,25 +101,19 @@ curl --location 'http://localhost:5000/search?book=to'
 Database Schema
 This project uses two main tables: usercredential and books.
 
-1. usercredential Table
-Stores user authentication details.
++-------------------+          +---------------------+
+| usercredential    |          | books               |
++-------------------+          +---------------------+
+| userid (PK)       |          | id (PK)             |
+| username (unique) |          | title               |
+| password          |          | author              |
++-------------------+          | genre               |
+                               | description         |
+                               | published_date      |
+                               | reviews (JSONB)     |
+                               | created_at          |
+                               | updated_at          |
+                               +---------------------+
 
-Column	| Type	| Description
-userid	| SERIAL	| Primary key (auto-increment)
-username	| TEXT	| Unique username
-password	| TEXT	| Hashed password (bcrypt format)
-
-2. books Table
-Stores book details along with reviews as JSON.
-
- Column          | Type   | Description                                                       
- 
- id              | SERIAL | Primary key (auto-increment)                                      
- title           | TEXT   | Title of the book                                                 
- author          | TEXT   | Author of the book                                                
- genre           | TEXT   | Book genre/category                                               
- description     | TEXT   | Brief description of the book                                     
- published\_date | BIGINT | Published date (Unix timestamp in seconds)                        
- reviews         | JSONB  | JSON array of reviews (`user`, `comment`, `rating`, `created_at`) 
- created\_at     | BIGINT | Record creation timestamp (Unix timestamp)                        
- updated\_at     | BIGINT | Record last update timestamp (Unix timestamp)                     
+* No direct foreign key relationship, reviews are stored as JSON inside books table.
+                    
