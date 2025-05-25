@@ -102,11 +102,11 @@ Database Schema
 This project uses two main tables: usercredential and books.
 
 1. usercredential Table
-| Column   | Data Type | Constraints         | Description                   |
-| -------- | --------- | ------------------- | -----------------------------|
-| userid   | SERIAL    | PRIMARY KEY         | Auto-increment user ID        |
-| username | TEXT      | UNIQUE, NOT NULL    | Unique username               |
-| password | TEXT      | NOT NULL            | Hashed password (bcrypt hash) |
+| Column   | Data Type | Constraints      | Description                   |
+| -------- | --------- | ---------------- | ----------------------------- |
+| userid   | SERIAL    | PRIMARY KEY      | Auto-increment user ID        |
+| username | TEXT      | UNIQUE, NOT NULL | Unique username               |
+| password | TEXT      | NOT NULL         | Hashed password (bcrypt hash) |
 
 
 
