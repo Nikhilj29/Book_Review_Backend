@@ -10,7 +10,7 @@ A backend API for creating and managing book reviews. It supports user authentic
 2. Install dependencies:
    npm install
 
-3.Create an environment file:
+3. Create an environment file:
    POSTGRESS_USER=your_postgres_username
    POSTGRESS_PASS=your_postgres_password
    POSTGRES_DATABASE=your_database_name
@@ -18,7 +18,7 @@ A backend API for creating and managing book reviews. It supports user authentic
    POSTGRES_PORT=5432
    JWT_TOKEN=your_jwt_secret
 
-4.Set up PostgreSQL
+4. Set up PostgreSQL
    Ensure PostgreSQL is installed and running.
    Create a database matching of which design is explained below.
    Run migration scripts if included.
