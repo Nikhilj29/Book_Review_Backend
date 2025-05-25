@@ -101,19 +101,24 @@ curl --location 'http://localhost:5000/search?book=to'
 Database Schema
 This project uses two main tables: usercredential and books.
 
-+-------------------+          +---------------------+
-| usercredential    |          | books               |
-+-------------------+          +---------------------+
-| userid (PK)       |          | id (PK)             |
-| username (unique) |          | title               |
-| password          |          | author              |
-+-------------------+          | genre               |
-                               | description         |
-                               | published_date      |
-                               | reviews (JSONB)     |
-                               | created_at          |
-                               | updated_at          |
-                               +---------------------+
+1. usercredential Table
+| Column   | Type   | Description                   |
+| -------- | ------ | ----------------------------- |
+| userid   | SERIAL | Primary key (auto-increment)  |
+| username | TEXT   | Unique username               |
+| password | TEXT   | Hashed password (bcrypt hash) |
 
-* No direct foreign key relationship, reviews are stored as JSON inside books table.
+2.books Table
+| Column          | Type   | Description                                                       |
+| --------------- | ------ | ----------------------------------------------------------------- |
+| id              | SERIAL | Primary key (auto-increment)                                      |
+| title           | TEXT   | Book title                                                        |
+| author          | TEXT   | Author name                                                       |
+| genre           | TEXT   | Genre/category                                                    |
+| description     | TEXT   | Book description                                                  |
+| published\_date | BIGINT | Published date (Unix timestamp in seconds)                        |
+| reviews         | JSONB  | JSON array of reviews (`user`, `comment`, `rating`, `created_at`) |
+| created\_at     | BIGINT | Record creation time (Unix timestamp)                             |
+| updated\_at     | BIGINT | Last update time (Unix timestamp)                                 |
+
                     
