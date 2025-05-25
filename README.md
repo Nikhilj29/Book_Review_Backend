@@ -23,14 +23,16 @@ A backend API for creating and managing book reviews. It supports user authentic
    Create a database matching of which design is explained below.
    Run migration scripts if included.
 
-5.Start the server:
+5. Start the server:
    node index.js or if you nhave nodemon install then nodemon index.js
 
 
 ## 💻 How to Run Locally
 
 1.Make sure PostgreSQL is running and your .env file is configured.
+
 2.Run the development server.
+
 3.View log f server running and database connected.
 
 ## 🔄 Example API Requests
