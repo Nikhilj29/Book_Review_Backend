@@ -108,6 +108,7 @@ This project uses two main tables: usercredential and books.
 | username | TEXT   | Unique username               |
 | password | TEXT   | Hashed password (bcrypt hash) |
 
+
 2.books Table
 | Column          | Type   | Description                                                       |
 | --------------- | ------ | ----------------------------------------------------------------- |
